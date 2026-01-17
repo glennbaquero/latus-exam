@@ -1,6 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 import { PageProps } from '@/types';
+import { useState } from 'react';
 
 interface Joke {
     id: number;
@@ -16,6 +17,14 @@ interface DashboardProps extends PageProps {
 }
 
 export default function Dashboard({ jokes }: DashboardProps) {
+    const [isRefreshing, setIsRefreshing] = useState(false);
+    const refreshJokes = () => {
+        setIsRefreshing(true);
+        router.reload({
+            onFinish: () => setIsRefreshing(false),
+        });
+    };
+
     return (
         <AuthenticatedLayout
             header={
@@ -30,6 +39,17 @@ export default function Dashboard({ jokes }: DashboardProps) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
+                            <div className="flex justify-between items-center mb-4">
+                                <h3 className="text-lg font-semibold">Random Jokes</h3>
+                                <button
+                                    onClick={refreshJokes}
+                                    disabled={isRefreshing}
+                                    className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                >
+                                    {isRefreshing ? 'Refreshing...' : 'Get New Jokes'}
+                                </button>
+                            </div>
+
                             <h3 className="text-lg font-semibold mb-4">3 Random Jokes</h3>
 
                             <div className="space-y-4">
