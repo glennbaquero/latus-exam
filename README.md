@@ -55,13 +55,13 @@ php artisan storage:link
 npm install --legacy-peer-deps
 ```
 
-### 9. Compile front-end assets
+### 9. Compile front-end assets (Don't stop/close the process)
 
 ```bash
 npm run dev
 ```
 
-### 10. Start the development server
+### 10. Start the development server in new terminal
 
 ```bash
 php artisan serve
