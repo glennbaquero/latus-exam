@@ -34,19 +34,4 @@ class JokeController extends Controller
             ]);
         }
     }
-
-    public function random(): JsonResponse
-    {
-        try {
-            $jokes = $this->jokeService->get(3);
-            
-            return response()->json([
-                'jokes' => JokeResource::collection($jokes)->resolve()
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => 'Failed to load jokes'
-            ], 500);
-        }
-    }
 }
