@@ -73,3 +73,12 @@ You can now access the app at [http://localhost:8000/login](http://localhost:800
 
 * Email: [test@example.com](mailto:test@example.com)
 * Password: password
+
+### 11. Run Tests
+
+For running the tests, use the following commands:
+
+```bash
+php artisan test --filter=JokeApiServiceTest
+php artisan test --filter=JokeControllerTest
+```
