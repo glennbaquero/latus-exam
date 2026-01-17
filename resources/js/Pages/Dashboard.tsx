@@ -7,7 +7,7 @@ interface Joke {
     id: number;
     setup: string;
     punchline: string;
-    // Add other properties from your JokeResource
+    type: string;
 }
 
 interface DashboardProps extends PageProps {

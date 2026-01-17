@@ -18,6 +18,7 @@ class JokeResource extends JsonResource
             'id' => $this['id'],
             'setup' => $this['setup'],
             'punchline' => $this['punchline'],
+            'type' => $this['type'],
         ];
     }
 }
