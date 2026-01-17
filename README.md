@@ -1,3 +1,10 @@
+## Requirements
+- PHP 8.2 or higher
+- Composer 2.4 or higher
+- Node.js 22 or higher
+- npm 10.9 or higher
+- SQLite3 enabled in your PHP extensions
+
 ## Setup
 
 Follow these steps to get the application running locally.
