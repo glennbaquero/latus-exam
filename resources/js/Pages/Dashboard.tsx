@@ -55,6 +55,7 @@ export default function Dashboard({ jokes }: DashboardProps) {
                             <div className="space-y-4">
                                 {jokes?.data?.map((joke) => (
                                     <div key={joke.id} className="p-4 bg-gray-50 rounded-lg">
+                                        <p className="text-gray-600 mt-2 text-sm">{joke.type}</p>
                                         <p className="font-medium">{joke.setup}</p>
                                         <p className="text-gray-600 mt-2">{joke.punchline}</p>
                                     </div>
